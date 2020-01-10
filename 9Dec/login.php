@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +51,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login-form-btn"> <a href="index.html">Login</a>
+						<button class="login-form-btn"> <a href="index.php">Login</a>
 
 						</button>
 					</div>
@@ -57,7 +61,7 @@
 							Don’t have an account?
 						</span>
 
-						<a href="signup.html" class="txt3">
+						<a href="signup.php" class="txt3">
 							Sign up now
 						</a>
 					</div>

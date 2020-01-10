@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -21,49 +25,49 @@
     <!--Sidenav-->
     <ul class="nav">
       <li class="nav__item">
-        <a href="index.html" class="nav__link">
+        <a href="index.php" class="nav__link">
           <i class="material-icons">dashboard</i>
           <p>My Profile and Dashboard</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="tasks.html" class="nav__link nav__link--active">
+        <a href="tasks.php" class="nav__link nav__link--active">
           <i class="material-icons">content_paste</i>
           <p>Tasks</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="deliveries.html" class="nav__link">
+        <a href="deliveries.php" class="nav__link">
           <i class="material-icons">directions_car</i>
           <p>Deliveries</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inflow.html" class="nav__link">
+        <a href="inflow.php" class="nav__link">
           <i class="fas fa-hand-holding-usd"></i>
           <p>Inflow</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inventory.html" class="nav__link">
+        <a href="inventory.php" class="nav__link">
           <i class="material-icons">bubble_chart</i>
           <p>Inventory and stock</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="accounting.html" class="nav__link">
+        <a href="accounting.php" class="nav__link">
           <i class="fas fa-cash-register"></i>
           <p>Accounting</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="notifications.html" class="nav__link">
+        <a href="notifications.php" class="nav__link">
           <i class="material-icons">notifications</i>
           <p>Notifications</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="lang.html" class="nav__link">
+        <a href="training.php" class="nav__link">
           <i class="material-icons">language</i>
           <p>Training & Support</p>
         </a>
@@ -99,9 +103,8 @@
 
                   </div>
                 </div>
-                <div class="card__body">
-
-                  <form class="form-horizontal" action="/action_page.php">
+                <div id=eggProduction class="card__body">
+                  <form class="form-horizontal" method="post" action="database/egg.php">
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="eggspicked">Eggs Picked:</label>
                     <div class="col-sm-6">
@@ -111,7 +114,7 @@
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="eggspicked">Breakages:</label>
                     <div class="col-sm-6">
-                      <input type="number" class="form-control" id="eggsbroken" placeholder="Enter estimate eggs expected" name="eggspicked">
+                      <input type="number" class="form-control" id="eggsbroken" placeholder="Enter estimate eggs expected" name="eggbroken">
                     </div>
                   </div>
                   <div class="form-group">
@@ -124,11 +127,11 @@
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="color">Size:</label>
                     <div class="col-sm-6">
-                      <select class="eggcolour" name="eggcolour">Size
-                        <option value="">small</option>
-                        <option value="">medium</option>
-                        <option value="">large</option>
-                        <option value="">mixed</option>
+                      <select class="eggcolour" name="sizeE">Size
+                        <option value="Small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="mixed">mixed</option>
                       </select>
                     </div>
                   </div>
@@ -137,17 +140,17 @@
                     <label class="control-label col-sm-4" for="color">Colour:</label>
                     <div class="col-sm-6">
                       <select class="eggcolour" name="eggcolour">Colour
-                        <option value="">brown </option>
-                        <option value="">white</option>
-                        <option value="">speckled</option>
-                        <option value="">dirty</option>
+                        <option value="brown">brown </option>
+                        <option value="white">white</option>
+                        <option value="speckled">speckled</option>
+                        <option value="dirty">dirty</option>
                       </select>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-3">
-                      <button type="save" class="btn btn-default">Save</button><br><br>
+                      <button type="save" class="btn btn-default" name ="eggProduction">Save</button><br><br>
                     </div>
                   </div>
                 </form>
@@ -167,9 +170,9 @@
 
                   </div>
                 </div>
-                <div class="card__body">
+                <div class="card__body" id="count">
 
-                  <form class="form-horizontal" action="/action_page.php">
+                  <form class="form-horizontal" action="database/birdCount.php" method="post">
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="email">Batch Name:</label>
                     <div class="col-sm-6">
@@ -179,7 +182,7 @@
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="eggspicked">Number of birds:</label>
                     <div class="col-sm-6">
-                      <input type="number" class="form-control" id="eggsbroken" placeholder="Enter No. eggs picked" name="eggspicked">
+                      <input type="number" class="form-control" id="birds" placeholder="Enter No. of birds" name="birds">
                     </div>
                   </div>
                   <div class="form-group">
@@ -197,7 +200,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-4">
-                      <button type="save" class="btn btn-default">Save</button><br><br>
+                      <button type="save" class="btn btn-default" name = "count">Save</button><br><br>
                     </div>
                   </div>
                 </form>
@@ -216,16 +219,16 @@
                       <!-- markup -->
                       </div>
                     </div>
-                    <div class="card__body">
+                    <div id= "submit" class="card__body">
 
-                      <form class="form-horizontal" action="/action_page.php">
+                      <form class="form-horizontal" method= "post" action="database/feed.php">
                       <div class="form-group">
                         <label class="control-label col-sm-4" for="email">Feed:</label>
                         <div class="col-sm-2">
                           <select class="" name="feed">
-                            <option value="">10kg</option>
-                            <option value="">25kg</option>
-                            <option value="">50kg</option>
+                            <option value="10kg">10kg</option>
+                            <option value="25kg">25kg</option>
+                            <option value="50kg">50kg</option>
                           </select>
                         </div>
                       </div>
@@ -244,7 +247,7 @@
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-3">
-                          <button type=save class="btn btn-default">Save</button><br><br>
+                          <button type=save class="btn btn-default" name ="submit">Save</button><br><br>
                         </div>
                       </div>
                       </form>

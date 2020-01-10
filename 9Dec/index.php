@@ -1,8 +1,13 @@
+<?php
+session_start()
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Training</title>
+  <title>My Profile</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
@@ -21,51 +26,51 @@
     <!--Sidenav-->
     <ul class="nav">
       <li class="nav__item">
-        <a href="index.html" class="nav__link nav__link--active">
+        <a href="index.php" class="nav__link nav__link--active">
           <i class="material-icons">dashboard</i>
           <p>My Profile and Dashboard</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="tasks.html" class="nav__link">
+        <a href="tasks.php" class="nav__link">
           <i class="material-icons">content_paste</i>
           <p>Tasks</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="deliveries.html" class="nav__link">
+        <a href="deliveries.php" class="nav__link">
           <i class="material-icons">directions_car</i>
           <p>Deliveries</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inflow.html" class="nav__link">
+        <a href="inflow.php" class="nav__link">
           <i class="material-icons">attach_money</i>
           <p>Inflow</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inventory.html" class="nav__link">
-          <i class="material-icons">bubble_chart</i>
+        <a href="inventory.php" class="nav__link">
+          <i class="material-icons">store</i>
           <p>Inventory and stock</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="accounting.html" class="nav__link">
-          <i class="material-icons">library_books</i>
+        <a href="accounting.php" class="nav__link">
+          <i class="material-icons">location_ons</i>
           <p>Accounting</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="notifications.html" class="nav__link">
+        <a href="notifications.php" class="nav__link">
           <i class="material-icons">notifications</i>
           <p>Notifications</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href=";ang.html" class="nav__link">
+        <a href="training.php" class="nav__link">
           <i class="material-icons">language</i>
-          <p>Language support</p>
+          <p>Training and support</p>
         </a>
       </li>
     </ul>
@@ -92,17 +97,16 @@
               <div class="card">
                   <div class="card__header">
                     <div class="card__icon card__icon--orange">
-                      <i class="material-icons">content_copy</i>
+                      <i class="material-icons">account_circle</i>
                     </div>
-                    <p class="card__category">Used Space</p>
+                    <p class="card__category">My Info</p>
                     <h3 class="card__title">
-                      49/50
-                      <small>GB</small>
+
                     </h3>
                 </div>
                   <div class="card__footer">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="">Get more space</a>
+                    <i class="material-icons text-danger"></i>
+                    <a href="" ></a>
                 </div>
               </div>
             </div>
@@ -111,17 +115,17 @@
               <div class="card">
                   <div class="card__header">
                     <div class="card__icon card__icon--green">
-                      <i class="material-icons">store</i>
+                      <i class="material-icons">attach_money</i>
                     </div>
-                    <p class="card__category">Revenue</p>
+                    <p class="card__category">Profit</p>
                     <h3 class="card__title">
-                      $49,500
+                      $0,00
                       <small</small>
                     </h3>
                 </div>
                   <div class="card__footer">
                     <i class="material-icons">date_range</i>
-                    <a href="">Last 24hrs</a>
+                    <a href=""></a>
                 </div>
               </div>
             </div>
@@ -130,138 +134,82 @@
              <div class="card">
                   <div class="card__header">
                     <div class="card__icon card__icon--red">
-                      <i class="material-icons">info_outline</i>
+                      <i class="material-icons">store</i>
                     </div>
-                    <p class="card__category">Fixed Issues</p>
+                    <p class="card__category">Available Stock</p>
                     <h3 class="card__title">
-                      75
-                      <small></small>
+                      $0,00
                     </h3>
                 </div>
                   <div class="card__footer">
-                    <i class="material-icons">local_offer</i>
-                    <a href="">Track from Git</a>
+                    <i class="material-icons">update</i>
+                    <a href=""> Just updated</a>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-3">
               <!--Card-->
-             <div class="card">
-                  <div class="card__header">
-                    <div class="card__icon card__icon--blue">
-                      <i class="fab fa-twitter"></i>
-                    </div>
-                    <p class="card__category">Followers</p>
-                    <h3 class="card__title">
-                      +250
-                      <small></small>
-                    </h3>
-                </div>
-                  <div class="card__footer">
 
-                    <i class="material-icons">update</i><a href="">Just updated</a>
-                </div>
-              </div>
             </div>
           </div>
 
-          <!--Charts 2nd Row-->
+           <!--Charts 2nd Row-->
           <div class="row">
             <div class="col-md-6 col-lg-4">
               <div class="card">
                 <div class="card__header">
-                  <div class="chart chart--green" id="pieChartExample">
+                  <div class="chart chart--green">
+                    <h4>Production : Feed</h4>
                  <!-- markup -->
 
                   </div>
                 </div>
                 <div class="card__body">
-                  <h4>Daily Sales</h4>
-                  <p>Lorem ipsum dolor sit.</p>
+
+                  <p>This shows the ratio of the eggs produced in relation to the amount of feed and water they consumeds </p>
                 </div>
                 <div class="card__footer">
-                   <i class="material-icons">update</i><a href="">Updated 4mins ago</a>
+                   <i class="material-icons">update</i><a href=""></a>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="card">
                 <div class="card__header">
-                  <div class="chart chart--orange" id="lineBarExample">
+                  <div class="chart chart--orange" >
+                    <h4>Feed Consumed Over Time</h4>
                    <!-- markup -->
 
                   </div>
                 </div>
                 <div class="card__body">
-                  <h4>Email Subscriptions</h4>
-                  <p>Lorem ipsum dolor sit.</p>
+
+                  <p>This shows feed (kgs) that the layers have consumed over time</p>
                 </div>
                 <div class="card__footer">
-                   <i class="material-icons">update</i><a href="">Updated 4mins ago</a>
+                   <i class="material-icons">update</i><a href=""></a>
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
               <div class="card">
                     <div class="card__header">
-                      <div class="chart chart--red" id="lineB-ChartExample">
-
+                      <div class="chart chart--red" >
+                        <h4>Weekly Deliveries</h4>
                       <!-- markup -->
                       </div>
                     </div>
                     <div class="card__body">
-                      <h4>Daily Sales</h4>
-                      <p>Lorem ipsum dolor sit.</p>
+
+                      <p>This shows an overview of the past week's deliveries</p>
                     </div>
                     <div class="card__footer">
-                       <i class="material-icons">update</i><a href="">Updated 4mins ago</a>
+                       <i class="material-icons">update</i><a href=""></a>
                     </div>
-                  </div>
+                  </div>/
             </div>
            </div>
 
-          <!--3rd row -->
-          <div class="row">
-            <div class="col-md-12 col-lg-6">
-              <div class="card">
-               <div class="card__header">
-
-                </div>
-                 <table class="table">
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
-            </div>
-            <div class="col-md-6 col-md-12 col-lg-6">
-              <div class="card">
-                <div class="card__header">
-
-                </div>
-                <div class="card__body">
-
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
   </section>

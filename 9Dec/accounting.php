@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -21,49 +25,49 @@
     <!--Sidenav-->
     <ul class="nav">
       <li class="nav__item">
-        <a href="index.html" class="nav__link">
+        <a href="index.php" class="nav__link">
           <i class="material-icons">dashboard</i>
           <p>My Profile and Dashboard</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="tasks.html" class="nav__link">
+        <a href="tasks.php" class="nav__link">
           <i class="material-icons">content_paste</i>
           <p>Tasks</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="deliveries.html" class="nav__link">
+        <a href="deliveries.php" class="nav__link">
           <i class="material-icons">directions_car</i>
           <p>Deliveries</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inflow.html" class="nav__link">
+        <a href="inflow.php" class="nav__link">
           <i class="material-icons">attach_money</i>
           <p>Inflow</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inventory.html" class="nav__link ">
+        <a href="inventory.php" class="nav__link ">
           <i class="material-icons">bubble_chart</i>
           <p>Inventory and stock</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="accounting.html" class="nav__link nav__link--active">
+        <a href="accounting.php" class="nav__link nav__link--active">
           <i class="material-icons">library_books</i>
           <p>Accounting</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="notifications.html" class="nav__link">
+        <a href="notifications.php" class="nav__link">
           <i class="material-icons">notifications</i>
           <p>Notifications</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="lang.html" class="nav__link">
+        <a href="training.php" class="nav__link">
           <i class="material-icons">language</i>
           <p>Training & Support</p>
         </a>

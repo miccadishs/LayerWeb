@@ -1,8 +1,12 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Inflow</title>
+  <title>Deliveries</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
@@ -21,49 +25,49 @@
     <!--Sidenav-->
     <ul class="nav">
       <li class="nav__item">
-        <a href=index.html"" class="nav__link">
+        <a href="index.php" class="nav__link">
           <i class="material-icons">dashboard</i>
           <p>My Profile and Dashboard</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="tasks.html" class="nav__link">
+        <a href="tasks.php" class="nav__link">
           <i class="material-icons">content_paste</i>
           <p>Tasks</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="deliveries.html" class="nav__link ">
+        <a href="deliveries.php" class="nav__link nav__link--active">
           <i class="material-icons">directions_car</i>
           <p>Deliveries</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inflow.html" class="nav__link nav__link--active">
+        <a href="inflow.php" class="nav__link">
           <i class="material-icons">attach_money</i>
           <p>Inflow</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="inventory.html" class="nav__link">
+        <a href="inventory.php" class="nav__link">
           <i class="material-icons">bubble_chart</i>
           <p>Inventory and stock</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="accounting.html" class="nav__link">
+        <a href="accounting.php" class="nav__link">
           <i class="material-icons">library_books</i>
           <p>Accounting</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="notifications.html" class="nav__link">
+        <a href="notifications.php" class="nav__link">
           <i class="material-icons">notifications</i>
           <p>Notifications</p>
         </a>
       </li>
       <li class="nav__item">
-        <a href="training.html" class="nav__link">
+        <a href="training.php" class="nav__link">
           <i class="material-icons">language</i>
           <p>Training & Support</p>
         </a>
@@ -76,7 +80,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent">
         <!--<div class="container-fluid">-->
           <div class="navbar-wrapper">
-            <a href="" class="navbar-brand">Inflow</a>
+            <a href="" class="navbar-brand">Deliveries</a>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -94,15 +98,30 @@
               <div class="card">
                 <div class="card__header">
                   <div class="chart chart--orange" >
-                    <img src="img/inflow-cardicon.png" alt="">
+                    <i class="material-icons" style="font-size: 60px; color: black;">directions_car</i>
+                    <i class="material-icons" style="font-size: 60px; color: black;">trending_flat</i>
+                    <i class="material-icons" style="font-size: 60px; color: black;">store</i>
+                    <i class="material-icons" style="font-size: 60px; color: black;">trending_flat</i>
+                    <i class="material-icons" style="font-size: 60px; color: black;">attach_money</i>
+                    <i class="material-icons"style="font-size: 60px; color: black;">attach_money</i>
+                    <i class="material-icons" style="font-size: 60px; color: black;">attach_money</i>
 
                    <!-- markup -->
 
                   </div>
                 </div>
-                <div class="card__body">
-                  <form class="form-horizontal" action="/action_page.php">
-
+                <div id=deliv class="card__body">
+                  <form class="form-horizontal" method= "post" action="database/deliveriesP.php">
+                    <div class="form-group">
+                      <label class="control-label col-sm-4" for="color">Customer Type:</label>
+                      <div class="col-sm-6">
+                        <select class="eggcolour" name="payType" id= "payType">
+                          <option value="Cash">Cash </option>
+                          <option value="Account">Account</option>
+                          <option value="Part Payment">Part Payment </option>
+                        </select>
+                      </div>
+                    </div>
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="customername">Customer Name:</label>
                     <div class="col-sm-6">
@@ -136,20 +155,12 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <label class="control-label col-sm-4" for="">Balance:</label>
-                    <div class="col-sm-6">
-                      <input type="number" class="form-control" id="balance" placeholder="Enter Outstanding balance" name="balance">
-                    </div>
-                  </div>
-
 
                   <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-3">
-                      <button type="save" class="btn btn-default">Save</button><br><br>
+                      <button type="save" class="btn btn-default" name="deliv">Save</button><br><br>
                     </div>
                   </div>
-                  </form>
                   </form>
                 </div>
                 <div class="card__footer">
@@ -164,13 +175,12 @@
           <div class="row">
             <div class="col-md-12 col-lg-12">
               <div class="card">
-               <div class="card__header" style="background-image: linear-gradient(60deg, #ffa602, #fff)">
+               <div class="card__header" style="  background-image: linear-gradient(60deg, #ffa602, #fff)">
 
                 </div>
-                 <table class="table">
+                 <table class="table" >
                    <thead>
-                     <h2 style="background-image: linear-gradient(60deg, #ffa602, #fff)"> Inflow History</h2>
-                     </thead>
+                     <h2 style="  background-image: linear-gradient(60deg, #ffa602, #fff)"> Deliveries History</h2>
                    </thead>
                    <form class="" action="index.html" method="post">
                      Search by: name:
@@ -178,11 +188,12 @@
 
                     <tbody>
                       <th> Date</th>
+                      <th>Type</th>
                       <th>Name</th>
-                      <th>Outstanding Amount</th>
-                      <th>Amount Paid</th>
-                      <th>Balance</th>
-
+                      <th>Quantity</th>
+                      <th>Unit Price</th>
+                      <th>Total Due</th>
+                      <th>Total Paid</th>
                     </tbody>
                   </table>
               </div>
@@ -197,9 +208,7 @@
       <nav class="float-left">
         Some links
       </nav>
-      <div class="copy float-right">
-        Copy right
-      </div>
+
     </div>
   </footer>
 </main>
