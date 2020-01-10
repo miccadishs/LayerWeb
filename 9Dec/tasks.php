@@ -188,7 +188,7 @@ session_start()
                   <div class="form-group">
                     <label class="control-label col-sm-4" for="pwd">Mortality:</label>
                     <div class="col-sm-6">
-                      <input type="number" class="form-control" id="eggsbroken" placeholder="Enter No. eggs broken" name="eggsbroken">
+                      <input type="number" class="form-control" id="mort" placeholder="Enter Dead Birds" name="mort">
                     </div>
                   </div>
                   <div class="form-group">

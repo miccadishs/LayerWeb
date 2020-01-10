@@ -24,15 +24,15 @@ if (mysqli_query($db, $sql))
 {
 	echo '<script>
 	alerts("Sale Made");
-	window.location = "../deliveries.php"
+	window.location= "../tasks.php";
 	</script>';
 }
 else
 {
-	echo '<script type="text/javascript">prompt("Error Occured");</script>';
-	header("Location: ../deliveries.php");
-
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+	echo '<script>
+  alert("Error Occured");
+  window.location ="../tasks.php";
+  </script>';
 	}
 }
 ?>

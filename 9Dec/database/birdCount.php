@@ -5,28 +5,43 @@
 
 	$db=mysqli_connect("localhost","root", "","shoop");
 	if(isset($_POST['count'])) {
-
 		$num = ($_POST['birds']);
-
+		$mort = ($_POST['mort']);
+	  $reason = "";
+	  $date = date("Y-m-d");
 		$sql;
+		$sq2;
+		$sql3;
+		$hState;
+
+		if(isset($_POST['remember'])){
+			$hState = "Leveled";
+		}
+		else{
+			$hState = "Not Ideal";
+		}
 
 if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $sql = "Update birdCount Set birds = '". $num . "'where id = '1'";
+$sql2 = "Insert into mort(mortQ,cause,date) values ('$mort','$reason','$date')";
+$sql3 = "Insert into health(hState,reason,date) values ('$hState','$reason','$date')";
 
-if (mysqli_query($db, $sql))
-{
-	echo "New record created successfully";
-	header("Location: ../tasks.php");
+
+//must make the entries independent of each other
+if ((mysqli_query($db, $sql))
+	echo '<script>
+  alert("Saved");
+  window.location ="../tasks.php";
+  </script>';
 }
-else
-{
-	echo "Error Occured";
-	header("Location: ../tasks.php");
-
-    echo "Error: " . $sql . "<br>" . mysqli_error($db);
-	}
+else{
+  echo '<script>
+  alert("Error Occured");
+  window.location ="../tasks.php";
+  </script>';
+  }
 }
 }
 ?>

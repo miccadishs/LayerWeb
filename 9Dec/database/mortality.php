@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-$db = mysqli_connect("localhost", "root","","online");
-if(isset($_POST['count'])){
-
+$db = mysqli_connect("localhost", "root","","shoop");
+if(isset($_POST['counts'])){
   $mort = ($_POST['mort']);
   $reason = "";
   $date = date("Y-m-d");
@@ -12,19 +11,20 @@ if(isset($_POST['count'])){
   if(!$db) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  $sql = "Insert into mort(mort,reason,date) values ('$mort','$reason','$date')";
+  $sql = "Insert into mort(mortQ,cause,date) values ('$mort','$reason','$date')";
 
 if (mysqli_query($db, $sql))
 {
-  echo '<script type="text/javascript">prompt("New record created successfully");</script>';
-	header("Location: feedTry.php");
+  echo '<script>
+  alert("Saved");
+  window.location ="../tasks.php";
+  </script>';
 }
 else{
-  echo '<script type="text/javascript">prompt("Error Occured");</script>';
-	header("Location: feedTry.php");
-
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-
+  echo '<script>
+  alert("Error Occured");
+  window.location ="../tasks.php";
+  </script>';
   }
 }
 ?>

@@ -1,7 +1,6 @@
 <?php
 	session_start();
 
-
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
 	$db=mysqli_connect("localhost","root", "","shoop");
@@ -19,15 +18,17 @@ $sql = "INSERT  into feed (fNum,fType,dateY) values ('$fNum','$fType','$date')";
 
 if (mysqli_query($db, $sql))
 {
-	echo "New record created successfully";
-	header("Location: ../tasks.php");
+	echo '<script>
+	alert("Saved");
+	window.location = "../tasks.php";
+	</script>';
 }
 else
 {
-	echo "Error Occured";
-	header("Location: feedTry.php");
-
-    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+	vecho '<script>
+	alert("Error Occured");
+	window.location = "../tasks.php";
+	</script>';
 	}
 }
 }
